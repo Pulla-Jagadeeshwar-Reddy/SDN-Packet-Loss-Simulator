@@ -149,9 +149,11 @@ Auntomated measurement script
 🔹 Scenario 1: Normal Operation
 No drop rules
 Expected: 0% packet loss
+
 🔹 Scenario 2: Packet Drop
 Drop rule applied
 Expected: 100% packet loss
+
 🔹 Scenario 3: Recovery
 Drop rules removed
 Expected: Network restored
@@ -161,38 +163,59 @@ Expected: Network restored
 The system verifies:
 
 Drop rules are correctly installed
+
 Drop rules are removed precisely
+
 Forwarding rules remain unaffected
 
 Apply drop → Verify loss → Remove drop → Verify recovery
 
 ## Key Design Decisions
 Reactive learning switch (simpler + realistic SDN)
+
 Priority-based rule control:
+
 Drop: 200
+
 Forward: 100
+
 REST-based control for flexibility
+
 Flow stats used for analytics
 
 ## Challenges Faced
 Flow matching conflicts (MAC vs IP)
+
 Drop rules not triggering due to existing flows
+
 OpenFlow counters not updating for drop rules
+
 Synchronization delays in stats collection
 
 ## Technologies Used
+
 Python 3
+
 Ryu Controller
+
 Mininet
+
 OpenFlow 1.3
+
 cURL (API testing)
 
 ## Project Structure
+
 SDN/
+
 ├── packet_drop_controller.py
+
 ├── topology.py
+
 ├── measure1.sh
+
 ├── README.md
+
 📸 Proof of Execution
 
 ## Conclusion
@@ -200,13 +223,19 @@ SDN/
 This project successfully demonstrates:
 
 SDN-based traffic control
+
 Flow rule design and enforcement
+
 Real-time packet loss analysis
+
 Automated evaluation and validation
 
 ## References
+
 Ryu Documentation
+
 Mininet Documentation
+
 OpenFlow Specification
 
 ---
