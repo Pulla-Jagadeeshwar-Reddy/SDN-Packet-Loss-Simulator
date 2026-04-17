@@ -32,7 +32,7 @@ The system consists of:
        /     \
     [s2]     [s3]
     / \       / \
-  h1   h2    h3   h4
+    h1   h2  h3   h4
 
   
 - Hosts: h1–h4 (10.0.0.1 – 10.0.0.4)
