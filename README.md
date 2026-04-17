@@ -1,6 +1,6 @@
 # SDN Packet Drop Simulator using Mininet and Ryu
 
-## 📌 Problem Statement
+## Problem Statement
 
 This project implements a Software Defined Networking (SDN) solution using **Mininet** and a **Ryu OpenFlow controller** to simulate and analyze packet dropping behavior between hosts.
 
@@ -13,7 +13,7 @@ As required in the assignment :contentReference[oaicite:1]{index=1}, the system 
 
 ---
 
-## 🧠 Project Overview
+## Project Overview
 
 The system consists of:
 - A **Mininet topology** (tree topology with 4 hosts, 3 switches)
@@ -25,7 +25,7 @@ The system consists of:
 
 ---
 
-## 🏗️ Network Topology
+## Network Topology
      [Controller]
           |
         [s1]
@@ -41,21 +41,21 @@ The system consists of:
 
 ---
 
-## ⚙️ Features Implemented
+## Features Implemented
 
-### ✅ 1. Learning Switch (Forwarding)
+### 1. Learning Switch (Forwarding)
 - MAC learning using `packet_in`
 - Dynamic flow installation
 - Reduces controller overhead
 
-### ✅ 2. Packet Drop Simulation
+### 2. Packet Drop Simulation
 - Selective drop rules using OpenFlow
 - Match fields:
   - IP (src/dst)
   - MAC (optional)
   - Protocol (TCP/UDP/ICMP)
 
-### ✅ 3. REST APIs
+### 3. REST APIs
 | Endpoint | Description |
 |--------|------------|
 | POST /drop_rules | Install drop rule |
@@ -63,18 +63,18 @@ The system consists of:
 | GET /event_log | View packet logs |
 | GET /metrics | Per-flow packet loss |
 
-### ✅ 4. Per-Flow Packet Loss Measurement
+### 4. Per-Flow Packet Loss Measurement
 - Uses OpenFlow flow statistics
 - Computes: loss % = dropped / (dropped + forwarded)
 - Provides structured output per connection
 
-### ✅ 5. Event Logging
+### 5. Event Logging
 - Logs all packet_in events
 - Includes MAC, IP, timestamp
 
 ---
 
-## 🔄 Workflow
+## Workflow
 
 ### Step 1: Start Controller 
 ryu-manager packet_drop_controller.py
@@ -101,7 +101,7 @@ curl http://localhost:8080/metrics
 
 ---
 
-## 📊  Output
+## Output
 
 Running RYU controller : 
 
@@ -143,7 +143,7 @@ Auntomated measurement script
 
 ![Automated Measurement script](image-9.png)
 
-🧪 Test Scenarios
+## Test Scenarios
 🔹 Scenario 1: Normal Operation
 No drop rules
 Expected: 0% packet loss
@@ -154,7 +154,7 @@ Expected: 100% packet loss
 Drop rules removed
 Expected: Network restored
 
-🔁 Regression Testing
+## Regression Testing
 
 The system verifies:
 
@@ -164,7 +164,7 @@ Forwarding rules remain unaffected
 
 Apply drop → Verify loss → Remove drop → Verify recovery
 
-🧩 Key Design Decisions
+## Key Design Decisions
 Reactive learning switch (simpler + realistic SDN)
 Priority-based rule control:
 Drop: 200
@@ -172,20 +172,20 @@ Forward: 100
 REST-based control for flexibility
 Flow stats used for analytics
 
-⚠️ Challenges Faced
+## Challenges Faced
 Flow matching conflicts (MAC vs IP)
 Drop rules not triggering due to existing flows
 OpenFlow counters not updating for drop rules
 Synchronization delays in stats collection
 
-🛠️ Technologies Used
+## Technologies Used
 Python 3
 Ryu Controller
 Mininet
 OpenFlow 1.3
 cURL (API testing)
 
-📂 Project Structure
+## Project Structure
 SDN/
 ├── packet_drop_controller.py
 ├── topology.py
@@ -193,12 +193,7 @@ SDN/
 ├── README.md
 📸 Proof of Execution
 
-Include screenshots of:
-
-ping results (before/after drop)
-flow tables (ovs-ofctl dump-flows)
-metrics API output
-🎯 Conclusion
+## Conclusion
 
 This project successfully demonstrates:
 
@@ -207,12 +202,7 @@ Flow rule design and enforcement
 Real-time packet loss analysis
 Automated evaluation and validation
 
-The system satisfies all requirements specified in the assignment including:
-
-Functional correctness
-Performance analysis
-Validation and testing
-📚 References
+## References
 Ryu Documentation
 Mininet Documentation
 OpenFlow Specification
