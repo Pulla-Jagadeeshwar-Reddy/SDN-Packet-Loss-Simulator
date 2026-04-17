@@ -104,33 +104,43 @@ curl http://localhost:8080/metrics
 ## 📊  Output
 
 Running RYU controller : 
+
 ![RYU Controller](image.png)
 
-Running Toplogy.py
+Running Toplogy.py :
+
 ![Running Topology](image-1.png)
 
-Base connectivity: 
+Base connectivity:
+
 ![Base Connectivity](image-2.png)
 
 Applying Drop rule:
+
 ![Applying drop rule](image-3.png)
 
 After Applying Drop Rule:
+
 ![Drop rule applied](image-4.png)
 
 Flow tables:
+
 ![Flow tables](image-5.png)
 
 Metrics :
+
 ![Metrics](image-6.png)
 
 Clearring the drop rules
+
 ![Clearing drop rules](image-7.png)
 
 After clearing drop rules:
+
 ![Clearing drop rules](image-8.png)
 
 Auntomated measurement script
+
 ![Automated Measurement script](image-9.png)
 
 🧪 Test Scenarios
