@@ -32,7 +32,7 @@ The system consists of:
        /     \
     [s2]     [s3]
     / \       / \
-  h1  h2   h3  h4
+  [h1]  [h2]   [h3]  [h4]
 
   
 - Hosts: h1–h4 (10.0.0.1 – 10.0.0.4)
@@ -42,6 +42,9 @@ The system consists of:
 ---
 
 ## Features Implemented
+
+<img width="1440" height="1228" alt="image" src="https://github.com/user-attachments/assets/55793f53-43b2-419d-b596-13db04c446d9" />
+
 
 ### 1. Learning Switch (Forwarding)
 - MAC learning using `packet_in`
